@@ -1,0 +1,18 @@
+﻿@model Dictionary<string, int>
+
+@{
+    ViewData["Title"] = "Customers Home Page";
+}
+
+ <h5>TOP 5 products sold</h5>
+<div class="card" style="width: 30rem;>
+
+    @foreach (var item in Model)
+    {
+        <ul class="list-group">
+            <li class="list-group-item">
+                Product Sku @item.Key with @item.Value items sold
+            </li>
+        </ul>
+    }
+</div>

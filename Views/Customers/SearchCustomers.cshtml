@@ -1,0 +1,24 @@
+﻿@model LabProject.Models.Customers.Customer
+
+@{
+    ViewData["Title"] = "Customers Home Page";
+}
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body primary">
+    <h5 class="card-title">
+        @Html.DisplayFor(model => model.Name) 
+        @Html.DisplayFor(model => model.Surname)
+        @Html.DisplayFor(model => model.Lastname)
+    </h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+            @Html.DisplayFor(model => model.DateOfBirthday.Day)/@Html.DisplayFor(model => model.DateOfBirthday.Month)/@Html.DisplayFor(model => model.DateOfBirthday.Year)
+            @Html.DisplayFor(model => model.CountryOfResidence)
+    </h6>
+    <p class="card-text">
+            El Cliente <b>@Html.DisplayFor(model => model.Name)</b>
+            <b>@Html.DisplayFor(model => model.Surname) </b>
+            <b>@Html.DisplayFor(model => model.Lastname)</b> tiene el mayor gasto con @ViewBag.Amount €
+    </p>
+  </div>
+</div>

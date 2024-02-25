@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LabProject.Models.Customers.Customer>
+
+@{
+    ViewData["Title"] = "Customers Home Page";
+}
+
+<div class="text-center">
+    <a asp-controller="Customers" asp-action="SearchCustomers"
+       class="btn btn-success">
+        Customers
+    </a>
+</div>
+
+<div class="mx-auto p-5">
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Surname
+                </th>
+                <th>
+                    Lastname
+                </th>
+                <th>
+                    DateOfBirthday
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    CountryOfResidence
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Lastname)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.DateOfBirthday.Day)/@Html.DisplayFor(modelItem => item.DateOfBirthday.Month)/@Html.DisplayFor(modelItem => item.DateOfBirthday.Year)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.CountryOfResidence)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
